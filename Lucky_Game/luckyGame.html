@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUCKY GAME</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="../Lucky_Game/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../Lucky_Game/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../Lucky_Game/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../Lucky_Game/img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="../Lucky_Game/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../Lucky_Game/style.css">
+    <link rel="preload" href="../Lucky_Game/img/goodluck.png" as="image">
+    <link rel="preload" href="../Lucky_Game/img/one.png" as="image">
+    <link rel="preload" href="../Lucky_Game/img/two.png" as="image">
+    <link rel="preload" href="../Lucky_Game/img/five.png" as="image">
+    <link rel="preload" href="../Lucky_Game/img/ty.png" as="image">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="item">
+                    <div class="item_img"></div>
+                    <button role="button" class="golden-button">
+                        <label for="opened_gift" class="text_open">
+                            <span class="golden-text">Open</span>
+                        </label>
+                    </button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="item">
+                    <div class="item_img"></div>
+                    <button role="button" class="golden-button">
+                        <label for="opened_gift" class="text_open">
+                            <span class="golden-text">Open</span>
+                        </label>
+                    </button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="item">
+                    <div class="item_img"></div>
+                    <button role="button" class="golden-button">
+                        <label for="opened_gift" class="text_open">
+                            <span class="golden-text">Open</span>
+                        </label>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <input type="checkbox" name="gift" id="opened_gift">
+    <div class="gift_show">
+        <label for="opened_gift" class="over_lay"></label>
+        <div class="gift_show_container">
+            <div class="gift_show_box">
+                <label for="opened_gift">
+                    <svg class="gift_show_box-close" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13 13L7.00002 7.00002M7.00002 7.00002L1 1M7.00002 7.00002L13 1M7.00002 7.00002L1 13" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </label>
+                    
+                <h2 class="gift_show_box-heading">Xin chúc mừng phần quà của bạn là:</h2>
+                <img src="" alt="Phần quà của bạn" class="gift_show_box-img">
+                <p class="gift_show_box-desc"></p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>© Copyright belongs to NCH</p>
+    </footer>
+    <script type="module" src="./lucky.js"></script>
+</body>
+</html>

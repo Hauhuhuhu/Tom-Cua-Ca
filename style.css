@@ -1,0 +1,221 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%;
+    font-family: "Montserrat", sans-serif;
+}
+.container {
+    max-width: 1200px;
+    margin: 100px auto;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -20px;
+    margin-left: -20px;
+}
+.col {
+    flex: 0 0 auto;
+    width: 33.3333333333%;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+.item {
+  margin-bottom: 32px;
+}
+.item_img {
+    background-image: url(./img/gift.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 50%;
+    min-height: 300px;
+    transform: rotate3d(1, 2, 3, -10deg) rotate3d(1, 2, 3, 10deg);
+    animation: animation 0.5s ease-in-out infinite;
+}
+@keyframes animation {
+    from {
+        transform: rotate3d(1, 2, 3, -10deg);
+    }
+    to {
+        transform: rotate3d(1, 2, 3, 10deg);
+    }
+
+}
+
+/* btn */
+.text_open {
+  display: inline-block;
+  width: 100%;
+  cursor: pointer;
+}
+.golden-button {
+    margin-top: 20px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    min-width: 120px;
+    height: 40px;
+    touch-action: manipulation;
+    display: inline-block;
+    outline: none;
+    font-family: inherit;
+    font-size: 1.6em;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 0.3em;
+    line-height: 2.5em;
+    text-transform: uppercase;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(110, 80, 20, 0.4),
+      inset 0 -2px 5px 1px rgba(139, 66, 8, 1),
+      inset 0 -1px 1px 3px rgba(250, 227, 133, 1);
+    background-image: linear-gradient(
+      160deg,
+      #a54e07,
+      #b47e11,
+      #fef1a2,
+      #bc881b,
+      #a54e07
+    );
+    border: 1px solid #a55d07;
+    color: rgb(120, 50, 5);
+    text-shadow: 0 2px 2px rgba(250, 227, 133, 1);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    background-size: 100% 100%;
+    background-position: center;
+}
+  
+.golden-button:focus,
+.golden-button:hover {
+    background-size: 150% 150%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23),
+      inset 0 -2px 5px 1px #b17d10, inset 0 -1px 1px 3px rgba(250, 227, 133, 1);
+    border: 1px solid rgba(165, 93, 7, 0.6);
+    color: rgba(120, 50, 5, 0.8);
+}
+
+.golden-button:active {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(110, 80, 20, 0.4),
+    inset 0 -2px 5px 1px #b17d10, inset 0 -1px 1px 3px rgba(250, 227, 133, 1);
+}
+
+/* gift show */
+
+.gift_show {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.1s ease-out;
+}
+.over_lay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.16);
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.1s ease-out;
+}
+.gift_show_container {
+   margin: auto;
+   visibility: hidden;
+   transform: translateY(-120%);
+   opacity: 0;
+   transition: all 0.3s linear;
+}
+.gift_show_box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 20px;
+}
+.gift_show_box-heading {
+  margin: 20px 0 10px;
+  font-size: 2.2rem;
+  font-weight: 800;
+}
+.gift_show_box-img {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  margin: 40px 0;
+}
+.gift_show_box-desc {
+  font-size: 2rem;
+  font-weight: 900;
+  margin: 20px 0;
+}
+.gift_show_box-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.disabled label {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* checkbox */
+#opened_gift {
+  display: none;
+}
+#opened_gift:checked ~ .gift_show,
+#opened_gift:checked ~ .gift_show .over_lay {
+  opacity: 1;
+  visibility: visible;
+}
+#opened_gift:checked ~ .gift_show .gift_show_container {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+
+/* responsive */
+@media (max-width: 768px) { 
+  .container {
+    width: 100%;
+  }
+  .gift_show {
+    margin: 0 20px;
+  }
+  .row {
+    margin: unset;
+  }
+  .col {
+    width: 100%;
+    padding: unset;
+  }
+  .item_img {
+    margin: 0 20px;
+  }
+}
